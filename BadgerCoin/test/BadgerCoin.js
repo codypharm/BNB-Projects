@@ -9,9 +9,7 @@ describe("BadgerCoin", () => {
     const BadgerCoin = await ethers.getContractFactory("BadgerCoin");
     const badgerCoin = await BadgerCoin.deploy("BadgerCoin", "BC");
     badgerContract = await badgerCoin.deployed();
-    const [first, second] = await ethers.getSigners();
-    owner = first;
-    other = second;
+    [owner, other] = await ethers.getSigners();
   });
 
   //test initial states
